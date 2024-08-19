@@ -8,7 +8,6 @@ export default function DrawerNavigator() {
   return (
     <Drawer.Navigator>
       <Drawer.Screen name="TabNavigator" component={TabNavigator} />
-      <Drawer.Screen name="Help" component={HelpScreen} />
     </Drawer.Navigator>
   );
 }

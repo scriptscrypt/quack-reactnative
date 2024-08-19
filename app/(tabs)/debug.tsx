@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { BlinksLayoutScreen } from "../screens/BlinksLayoutScreen";
 
-export default function BlinksScreen() {
+export default function DebugScreen() {
   return (
     <>
       <ScrollView>

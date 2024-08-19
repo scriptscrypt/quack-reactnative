@@ -1,3 +1,5 @@
+import "@/app/screens/styles/blinksStyles.css";
+import { useColorScheme } from "@/hooks/useColorScheme";
 import { DarkTheme, DefaultTheme, ThemeProvider } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { Drawer } from "expo-router/drawer";
@@ -5,8 +7,6 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "react-native-reanimated";
-
-import { useColorScheme } from "@/hooks/useColorScheme";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -34,7 +34,7 @@ export default function RootLayout() {
           <Drawer.Screen
             name="(tabs)"
             options={{
-              drawerLabel: "Home",
+              drawerLabel: "Quack", 
               title: "Quack",
             }}
           />

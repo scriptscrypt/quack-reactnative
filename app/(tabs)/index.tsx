@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { BlinksExampleScreen } from "../screens/BlinksExampleScreen";
+import { BlinksLayoutScreen } from "../screens/BlinksLayoutScreen";
 
 interface RegistryItem {
   actionUrl: string;
@@ -16,7 +16,7 @@ export default function DebugScreen() {
   const { isRegistryLoaded } = useActionsRegistryInterval();
   const [registryItems, setRegistryItems] = useState<RegistryItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<String | null>(null);
 
   useEffect(() => {
     fetchRegistryItems();
@@ -25,6 +25,7 @@ export default function DebugScreen() {
   const fetchRegistryItems = async () => {
     console.log("fetching registry items");
     try {
+      // let response: any;
       const response = await axios.get("https://registry.dial.to/v1/list");
       setRegistryItems(response.data?.results);
       setIsLoading(false);
@@ -52,18 +53,22 @@ export default function DebugScreen() {
       {registryItems.length > 0 &&
         registryItems.map(
           (item, index) =>
+            item.actionUrl &&
+            item.blinkUrl &&
+            item.websiteUrl &&
             index < 10 && (
               <View
                 key={index}
                 style={{
-                  padding: 10,
-                  borderBottomWidth: 1,
-                  borderBottomColor: "#ccc",
+                  padding: 16,
+                  borderBottomWidth: 0.2,
+                  borderBottomColor: "#808080",
                 }}
               >
-                {item.actionUrl && item.blinkUrl && item.websiteUrl && (
-                  <BlinksExampleScreen url={item.actionUrl} />
-                )}
+                <BlinksLayoutScreen
+                  key={index}
+                  url={item.actionUrl || item?.websiteUrl}
+                />
               </View>
             )
         )}
