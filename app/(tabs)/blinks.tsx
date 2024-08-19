@@ -7,8 +7,7 @@ export default function BlinksScreen() {
   return (
     <>
       <ScrollView>
-        <Text style={styles?.titleContainer}>Blinks</Text>
-        <BlinksExampleScreen url="https://checkmate.sendarcade.fun/" />
+        <BlinksExampleScreen url="https://blinktochat.fun/-1002232395603/3Coor2Baqhi8GUZqFF3uRvd4xiCKX6XU2KbgsSVqkcbW" />
       </ScrollView>
     </>
   );

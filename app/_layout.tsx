@@ -35,7 +35,7 @@ export default function RootLayout() {
             name="(tabs)"
             options={{
               drawerLabel: "Home",
-              title: "Home",
+              title: "Quack",
             }}
           />
         </Drawer>
