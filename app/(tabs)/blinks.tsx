@@ -1,11 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
+import { BlinksExampleScreen } from "../screens/BlinksExampleScreen";
+import ParallaxScrollView from "@/components/ParallaxScrollView";
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function BlinksScreen() {
   return (
     <>
-      <View>
+      <ScrollView>
         <Text style={styles?.titleContainer}>Blinks</Text>
-      </View>
+        <BlinksExampleScreen url="https://checkmate.sendarcade.fun/" />
+      </ScrollView>
     </>
   );
 }
