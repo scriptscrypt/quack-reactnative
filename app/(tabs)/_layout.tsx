@@ -59,11 +59,12 @@ export default function TabLayout() {
 
 const styles = StyleSheet.create({
   tabBar: {
-    marginVertical: 16,
-    marginHorizontal: 48,
     padding: 8,
-    borderRadius: 360,
+    borderRadius: 4,
     backgroundColor: Colors.light?.background,
+    shadowColor: Colors.light?.primaryTxtColor,
+    borderTopStartRadius: 32,
+    borderTopEndRadius: 32,
   },
   tabBarItem: {
     bottom: 4,

@@ -41,6 +41,9 @@ export default function RootLayout() {
           <Drawer.Screen
             name="(tabs)"
             options={{
+              drawerIcon: ({ color }) => (
+                <ThemedText style={{ color: color }}>👋</ThemedText>
+              ),
               headerStyle: {
                 backgroundColor: Colors?.light?.primaryColor,
                 shadowColor: Colors?.light?.background,
@@ -66,4 +69,3 @@ export default function RootLayout() {
     </ThemeProvider>
   );
 }
-
