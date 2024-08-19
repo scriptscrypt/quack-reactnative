@@ -56,13 +56,15 @@ export default function DebugScreen() {
             item.actionUrl &&
             item.blinkUrl &&
             item.websiteUrl &&
-            index < 10 && (
+            index < 50 && (
               <View
                 key={index}
                 style={{
                   padding: 16,
-                  borderBottomWidth: 0.2,
-                  borderBottomColor: "#808080",
+                  margin: 8,
+                  borderWidth: 0.2,
+                  borderColor: "#969696",
+                  borderRadius: 12,
                 }}
               >
                 <BlinksLayoutScreen

@@ -1,10 +1,17 @@
 import "@/app/screens/styles/blinksStyles.css";
+import { ThemedText } from "@/components/ThemedText";
+import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
-import { DarkTheme, DefaultTheme, ThemeProvider } from "@react-navigation/native";
+import {
+  DarkTheme,
+  DefaultTheme,
+  ThemeProvider,
+} from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { Drawer } from "expo-router/drawer";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
+import { StyleSheet, Text } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "react-native-reanimated";
 
@@ -34,7 +41,23 @@ export default function RootLayout() {
           <Drawer.Screen
             name="(tabs)"
             options={{
-              drawerLabel: "Quack", 
+              headerStyle: {
+                backgroundColor: Colors?.light?.primaryColor,
+                shadowColor: Colors?.light?.background,
+              },
+              headerTitleStyle: {
+                color: Colors?.light?.primaryTxtColor,
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 32,
+              },
+              drawerLabelStyle: {
+                color: Colors?.light?.tabIconDefault,
+                flex: 1,
+                alignItems: "center",
+                justifyContent: "center",
+              },
+              drawerLabel: "Quack",
               title: "Quack",
             }}
           />
@@ -43,3 +66,4 @@ export default function RootLayout() {
     </ThemeProvider>
   );
 }
+
